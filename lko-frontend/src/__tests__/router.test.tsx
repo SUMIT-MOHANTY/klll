@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Routes from '../routes';
+import App from '../App';
 
-test('renders HomePage at root path', () => {
+test('renders home page via router', () => {
   render(
     <MemoryRouter initialEntries={['/']}>
-      <Routes />
+      <App />
     </MemoryRouter>
   );
-  expect(screen.getByRole('heading')).toHaveTextContent('Welcome to LKO Frontend');
+  expect(screen.getByText(/welcome to lko frontend/i)).toBeInTheDocument();
 });

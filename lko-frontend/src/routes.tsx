@@ -1,11 +1,13 @@
 import React from 'react';
-import { Routes as Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
-export default function Routes() {
-  return (
-    <Switch>
+const AppRoutes: React.FC = () => (
+  <BrowserRouter>
+    <Routes>
       <Route path="/" element={<HomePage />} />
-    </Switch>
-  );
-}
+    </Routes>
+  </BrowserRouter>
+);
+
+export default AppRoutes;
