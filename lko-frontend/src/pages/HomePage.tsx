@@ -1,10 +1,12 @@
 import React from 'react';
-import { Hero } from '../components';
+import Hero from '../components/Hero';
+import NavBarResponsive from '../components/NavBarResponsive';
 
-export default function HomePage() {
-  return (
-    <main>
-      <Hero />
-    </main>
-  );
-}
+const HomePage: React.FC = () => (
+  <>
+    <NavBarResponsive />
+    <Hero />
+  </>
+);
+
+export default HomePage;

@@ -1,13 +1,11 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
-import NavBar from './components/NavBar';
+import RoutesComponent from './routes';
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes />
-    </BrowserRouter>
-  );
-}
+const App: React.FC = () => (
+  <BrowserRouter>
+    <RoutesComponent />
+  </BrowserRouter>
+);
+
+export default App;

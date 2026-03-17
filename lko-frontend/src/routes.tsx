@@ -1,11 +1,11 @@
 import React from 'react';
-import { Routes as Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
-export default function Routes() {
-  return (
-    <Switch>
-      <Route path="/" element={<HomePage />} />
-    </Switch>
-  );
-}
+const RoutesComponent: React.FC = () => (
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+  </Routes>
+);
+
+export default RoutesComponent;
