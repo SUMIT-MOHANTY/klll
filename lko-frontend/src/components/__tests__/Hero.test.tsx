@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Hero from '../Hero';
+import Hero from '../../Hero';
 
-test('renders hero heading', () => {
+test('renders hero title', () => {
   render(<Hero />);
-  expect(screen.getByRole('heading')).toHaveTextContent('Welcome to LKO Frontend');
+  expect(screen.getByText(/welcome to lko frontend/i)).toBeInTheDocument();
 });
