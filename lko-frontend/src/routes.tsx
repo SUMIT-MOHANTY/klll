@@ -1,13 +1,26 @@
+/**
+ * Central route definitions for the application.
+ */
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
+const routes: RouteObject[] = [
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+];
+
+export const router = createBrowserRouter(routes);
+
 const AppRoutes: React.FC = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
-  </BrowserRouter>
+  <React.Fragment>
+    {/* Router is provided at the app level */}
+    {routes.map(route => (
+      <React.Fragment key={route.path as string}>{route.element}</React.Fragment>
+    ))}
+  </React.Fragment>
 );
 
 export default AppRoutes;
