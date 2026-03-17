@@ -1,0 +1,65 @@
+
+/* --------------------------------------------------------------
+   Responsive navigation (hamburger) styles
+   -------------------------------------------------------------- */
+.nav-responsive {
+  display: none;               /* hidden on desktop, shown via media query */
+}
+
+/* Basic hamburger button styling */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger visual - three bars */
+.hamburger-box,
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  display: block;
+  position: relative;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.hamburger-inner::before {
+  top: -6px;
+}
+.hamburger-inner::after {
+  top: 6px;
+}
+
+/* Mobile menu container - hidden by default */
+.mobile-menu {
+  display: none;
+}
+
+/* Show/hide logic - controlled by component classes */
+.mobile-menu.nav-open {
+  display: block;
+}
+
+/* --------------------------------------------------------------
+   Media query - switch to mobile layout at 768px
+   -------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .nav-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

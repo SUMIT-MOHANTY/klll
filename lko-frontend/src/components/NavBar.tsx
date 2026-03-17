@@ -1,10 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarResponsive from './NavBarResponsive';
 
-export default function NavBar() {
+const NavBar: React.FC = () => {
   return (
-    <nav style={{ padding: '1rem', background: '#282c34' }}>
-      <Link to="/" style={{ color: '#61dafb', marginRight: '1rem' }}>Home</Link>
+    <nav className="navbar">
+      {/* Desktop navigation - hidden on small screens via CSS */}
+      <div className="nav-desktop">
+        <Link to="/" className="logo">MyApp</Link>
+        <ul className="nav-links">
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+      </div>
+
+      {/* Mobile / responsive navigation */}
+      <NavBarResponsive />
     </nav>
   );
-}
+};
+
+export default NavBar;
