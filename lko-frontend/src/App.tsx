@@ -1,13 +1,15 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
+/**
+ * Toplevel component that sets up routing.
+ */
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes';
 import NavBar from './components/NavBar';
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes />
-    </BrowserRouter>
-  );
-}
+const App: React.FC = () => (
+  <>
+    <NavBar />
+    <RouterProvider router={router} />
+  </>
+);
+
+export default App;
